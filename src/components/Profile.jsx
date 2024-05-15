@@ -1,7 +1,7 @@
 import React, { useState, useEffect, Suspense } from "react";
 import Navbar from "./Navbar";
 import ProfileCard from "./ProfileCard";
-const ProfilePromptCards = React.lazy(() => import("./ProfilePromptCards"));
+import ProfilePromptCards from "./ProfilePromptCards";
 import { useParams } from "react-router-dom";
 import { prompts_ } from "../Utils/store";
 import { useSetRecoilState } from "recoil";

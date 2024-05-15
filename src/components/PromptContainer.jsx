@@ -1,5 +1,5 @@
 import React, { Suspense } from 'react'
-const PromptCards = React.lazy(() => import('./PromptCards'))
+import PromptCards from './PromptCards'
 
 const PromptContainer = () => {
     return (
