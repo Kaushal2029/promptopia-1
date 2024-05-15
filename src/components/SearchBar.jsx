@@ -19,7 +19,7 @@ const SearchBar = () => {
                     name="Search prompts"
                     value={search}
                     onChange={handleSearch}
-                    placeholder="Search for 'username' or 'topic'"
+                    placeholder="Search for 'username' or 'topic' or 'prompt'"
                     autoComplete='off'
                 />
             </div>

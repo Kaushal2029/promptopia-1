@@ -33,7 +33,8 @@ const PromptCards = () => {
     ? prompts.filter(
         (item) =>
           item.user.username.toLowerCase().includes(search.toLowerCase()) ||
-          item.title.toLowerCase().includes(search.toLowerCase())
+          item.title.toLowerCase().includes(search.toLowerCase()) ||
+          item.content.toLowerCase().includes(search.toLowerCase())
       )
     : [];
 
