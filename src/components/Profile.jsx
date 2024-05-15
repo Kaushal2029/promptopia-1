@@ -54,9 +54,7 @@ const Profile = () => {
           <ProfileCard profile={profile} />
           <h1 className="mb-4 text-3xl font-bold text-center">Prompts</h1>
           <div className="grid gap-5 px-5 pb-4 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-5">
-            <Suspense fallback={<Loader />}>
-              <ProfilePromptCards profile={profile} />
-            </Suspense>
+            <ProfilePromptCards profile={profile} />
           </div>
         </div>
       ) : (
