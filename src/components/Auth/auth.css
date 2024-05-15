@@ -1,0 +1,7 @@
+.auth-body {
+  background-image: url(../../assets/auth_bg.webp);
+  /* background: linear-gradient(90deg, #667eea 0%, #764ba2 100%); */
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}

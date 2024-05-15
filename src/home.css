@@ -1,0 +1,31 @@
+.body {
+    background-image: url(./assets/home_bg.jpg);
+    /* background: linear-gradient(90deg, #667eea 0%, #764ba2 100%); */
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+
+.prompts {
+    max-height: calc(100vh - 277px);
+}
+
+.no-prompts {
+    width: calc(100vw - 40px);
+}
+
+.prompts::-webkit-scrollbar {
+    width: 5px;
+}
+
+.prompts::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.prompts::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.prompts::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.5);
+}
