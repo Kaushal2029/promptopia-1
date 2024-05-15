@@ -7,7 +7,6 @@ import { prompts_ } from "../Utils/store";
 import { useSetRecoilState } from "recoil";
 import NotFound from "./Error/NotFound.jsx";
 import api from "../Api/api";
-import Loader from "./Loader.jsx";
 
 const Profile = () => {
   const { profile } = useParams();
