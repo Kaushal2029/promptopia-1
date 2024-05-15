@@ -38,7 +38,7 @@ const ProfilePromptCards = ({ profile }) => {
     <>
       {filteredPrompts.length ? (
         filteredPrompts.map(
-          (item) => (
+          (item) => item.user.username === profile && (
             <div
               key={item.id}
               className="relative grid gap-4 py-4 pr-4 bg-white rounded-md shadow-md"
