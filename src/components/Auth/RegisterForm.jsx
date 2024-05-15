@@ -64,7 +64,7 @@ const RegisterForm = () => {
           localStorage.setItem("password", password);
           setSuccess("Registered successfully!");
           clearSuccess();
-          navigate("/login");
+          navigate("/");
         } catch (e) {
           setError("Username and email should be unique");
           clearError();
@@ -132,7 +132,7 @@ const RegisterForm = () => {
           <Typography variant="button" gutterBottom>
             Already registered?
           </Typography>
-          <Link to="/login">
+          <Link to="/">
             <Typography variant="button" className="p-2 hover:text-amber-300">
               Login
             </Typography>

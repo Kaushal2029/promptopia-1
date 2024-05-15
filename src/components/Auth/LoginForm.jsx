@@ -16,22 +16,22 @@ const LoginForm = () => {
   const inputStyles = {
     "& .MuiOutlinedInput-root": {
       fieldset: {
-        borderColor: "rgba(255,255,255,0.6)", // Default border color
+        borderColor: "rgba(255,255,255,0.6)", 
       },
       "&:hover fieldset": {
-        borderColor: "white", // Change border color on hover
+        borderColor: "white", 
       },
       "&.Mui-focused fieldset": {
-        borderColor: "#fcd34d", // Change focus border color
+        borderColor: "#fcd34d", 
       },
       "& .MuiInputBase-input": {
-        color: "white", // Change text color
+        color: "white",
       },
     },
     "& .MuiInputLabel-root": {
       color: "rgba(255,255,255,0.85)",
       "&.Mui-focused": {
-        color: "#fcd34d", // Change label color on focus
+        color: "#fcd34d",
       },
     },
   };
@@ -59,7 +59,7 @@ const LoginForm = () => {
       localStorage.setItem("password", password);
       setSuccess("Logged in successfully");
       clearSuccess();
-      navigate("/");
+      navigate("/home");
     } catch (e) {
       setError("Unable to login with provided credentials");
       clearError();

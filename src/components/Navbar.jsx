@@ -28,7 +28,7 @@ const Navbar = () => {
 
     const handleClick = async (id) => {
         if (id === 1) {
-            navigate("/");
+            navigate("/home");
         }
         else if (id === 2) {
             navigate(`/profile/${profile}`);
@@ -45,7 +45,7 @@ const Navbar = () => {
                     },
                 }
                 );
-                navigate("/login");
+                navigate("/");
             } catch (e) {
                 setError("Failed to logout");
                 clearError();

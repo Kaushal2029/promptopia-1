@@ -31,7 +31,6 @@ const EditPrompt = () => {
             Authorization: `Token ${token}`,
           },
         });
-        console.log(response.data);
         response.data.user.username === currentUser ? setValidUser(true) : setValidUser(false);
         setPrompt(response.data.content);
       } catch (e) {

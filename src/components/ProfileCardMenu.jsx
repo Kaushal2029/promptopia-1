@@ -70,7 +70,7 @@ const ProfileCardMenu = ({ text, promptId }) => {
         fetchPrompts();
       } catch (e) {
         setError("Something wrong happend. Try again");
-      clearError();
+        clearError();
       }
     }
   };
@@ -78,7 +78,6 @@ const ProfileCardMenu = ({ text, promptId }) => {
   return (
     <>
       <Menu as="div">
-        {/* <Menu.Button className="p-[0.1rem] rounded-full focus:ring-2 focus:ring-blue-500"> */}
         <Menu.Button className="p-2 rounded-md cursor-pointer hover:bg-gray-200">
           <HiDotsVertical className="fill-black/70" />
         </Menu.Button>

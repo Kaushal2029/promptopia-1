@@ -20,7 +20,6 @@ const PromptCards = () => {
             Authorization: `Token ${token}`,
           },
         });
-        console.log(response.data);
         setPrompts(response.data);
       } catch (e) {
         console.error(e.message);

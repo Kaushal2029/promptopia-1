@@ -10,7 +10,7 @@ const NotFound = () => {
                 <img src={notfoundImg} alt="404" />
                 <div className='grid gap-5 place-items-center'>
                     <h1 className='text-4xl font-bold text-center'>Seems like you are lost!</h1>
-                    <Link to="/">
+                    <Link to="/home">
                         <Button variant="contained" size="large">
                             Back to home
                         </Button>
