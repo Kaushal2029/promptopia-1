@@ -55,7 +55,7 @@ const ProfilePromptCards = ({ profile }) => {
                 {item.user.username === currentUser ? (
                   <ProfileCardMenu text={item.content} promptId={item.id} />
                 ) : (
-                  <CopyPrompt />
+                  <CopyPrompt text={item.content}/>
                 )}
               </div>
             </div>
