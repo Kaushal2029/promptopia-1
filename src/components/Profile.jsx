@@ -1,12 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Suspense } from "react";
 import Navbar from "./Navbar";
 import ProfileCard from "./ProfileCard";
-import ProfilePromptCards from "./ProfilePromptCards";
+const ProfilePromptCards = React.lazy(() => import("./ProfilePromptCards"));
 import { useParams } from "react-router-dom";
 import { prompts_ } from "../Utils/store";
 import { useSetRecoilState } from "recoil";
 import NotFound from "./Error/NotFound.jsx";
 import api from "../Api/api";
+import Loader from "./Loader.jsx";
 
 const Profile = () => {
   const { profile } = useParams();
@@ -53,7 +54,9 @@ const Profile = () => {
           <ProfileCard profile={profile} />
           <h1 className="mb-4 text-3xl font-bold text-center">Prompts</h1>
           <div className="grid gap-5 px-5 pb-4 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-5">
-            <ProfilePromptCards profile={profile} />
+            <Suspense fallback={<Loader />}>
+              <ProfilePromptCards profile={profile} />
+            </Suspense>
           </div>
         </div>
       ) : (
