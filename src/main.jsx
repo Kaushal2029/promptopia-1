@@ -14,7 +14,7 @@ import EditPrompt from "./components/EditPrompt.jsx";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/home",
     element: <App />,
     errorElement: <NotFound />,
   },
@@ -23,7 +23,7 @@ const router = createBrowserRouter([
     element: <Register />,
   },
   {
-    path: "/login",
+    path: "/",
     element: <Login />,
   },
   {
