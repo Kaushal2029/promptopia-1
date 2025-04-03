@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Typography, TextField, Button } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
-import api from "../../Api/api";
+// import api from "../../Api/api";
 import { useSetRecoilState } from "recoil";
 import { error_message, success_message } from "../../Utils/store";
 
@@ -16,13 +16,13 @@ const LoginForm = () => {
   const inputStyles = {
     "& .MuiOutlinedInput-root": {
       fieldset: {
-        borderColor: "rgba(255,255,255,0.6)", 
+        borderColor: "rgba(255,255,255,0.6)",
       },
       "&:hover fieldset": {
-        borderColor: "white", 
+        borderColor: "white",
       },
       "&.Mui-focused fieldset": {
-        borderColor: "#fcd34d", 
+        borderColor: "#fcd34d",
       },
       "& .MuiInputBase-input": {
         color: "white",
@@ -50,17 +50,31 @@ const LoginForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const data = { username, password };
+    const data = { email: username, password };
+    console.log(data);
 
     try {
-      const response = await api.post("/login/", data);
-      localStorage.setItem("usertoken", response.data.token);
-      localStorage.setItem("username", username);
-      localStorage.setItem("password", password);
+      const response = await fetch("http://localhost:8000/api/user/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+
+      const responseData = await response.json();
+      localStorage.setItem("usertoken", responseData.token);
+      localStorage.setItem("user", responseData.user);
       setSuccess("Logged in successfully");
       clearSuccess();
       navigate("/home");
     } catch (e) {
+      console.log("error", e);
+
       setError("Unable to login with provided credentials");
       clearError();
     }
@@ -71,8 +85,8 @@ const LoginForm = () => {
       <form className="grid gap-4" onSubmit={handleSubmit}>
         <TextField
           className="w-full"
-          label="Username"
-          name="username"
+          label="Email"
+          name="email"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
           autoComplete="off"

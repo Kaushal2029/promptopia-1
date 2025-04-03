@@ -34,7 +34,7 @@ const App = () => {
           </div>
         </Transition>
         <Navbar />
-        <SearchBar />
+        <SearchBar /> 
         <PromptContainer />
       </div>
     </>
