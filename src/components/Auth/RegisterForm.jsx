@@ -61,15 +61,27 @@ const RegisterForm = () => {
     const data = { name, email, number, password };
 
     try {
-      await axios.post("http://localhost:8000/api/user/users", data);
+      const response = await axios.post(
+        "http://localhost:8000/api/user/user",
+        data
+      );
+      console.log("Registration Response:", response.data);
+
       localStorage.setItem("username", name);
       localStorage.setItem("email", email);
       setSuccess("Registered successfully!");
       clearSuccess();
       navigate("/");
     } catch (error) {
+      console.error("Registration Error:", {
+        message: error.response?.data?.message,
+        status: error.response?.status,
+        data: error.response?.data,
+      });
+
       setError(
-        "Registration failed. Username, email, or number might already be in use."
+        error.response?.data?.message ||
+          "Registration failed. Please try again."
       );
       clearError();
     }
